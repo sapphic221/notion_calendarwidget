@@ -1,16 +1,18 @@
-
 <!DOCTYPE html>
 <!-- original:https://codepen.io/boudra/pen/raErwP -->
+<!---edit: https://github.com/ShoroukAziz/notion_widgets/blob/master/calendar.html----->
 <html lang="en">
-
 <head>
- <style>
- 
- body {
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
     font-family: 'Arial', sans-serif;
     background-color: #fff;
-  height: 100vh;
 }
+
 .wrapper {
     display: flex;
     align-items: center;
@@ -25,38 +27,23 @@ button::-moz-focus-inner {
 }
 
 #calendari {
-    margin: 0;
-    /*position: relative;
-    overflow: hidden;*/
-    /*height: 310px;
-    width: 350px;*/
+    margin:  0 auto;
+    /* height: 330px; */
+    /* width: 350px; */
     font-size: 14px;
-    box-shadow: 0px 1px 4px rgba(0,0,0,0.4);
+    /* box-shadow: 0px 1px 4px rgba(0,0,0,0.4); */
 }
 table {
     border-collapse: collapse;
     table-layout: fixed;
-    width: 350px;
     box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
     background-color: #fff;
     position: absolute;
-    top: 0;
-    left: 0;
-    transform: translateX(0);
-    transition: all 0.3s ease;
+
+
 }
-table.actiu {
-    transform: translateX(0px)top;
-}
-table.inactiu {
-    transition: all 0.3s 0.01s ease;
-}
-table.amagat-esquerra {
-    transform: translateX(-299px);
-}
-table.amagat-dreta {
-    transform: translateX(300px);
-}
+
+
 td,th {
     text-align: center;
     background-color: #fff;
@@ -77,7 +64,7 @@ td:last-child, th:last-child {
 th {
     border-top: 1px solid rgba(0,0,0,0.1);
     border-right: 1px solid rgba(0,0,0,0.1);
-    background-color: #657952;
+    background-color: #3b323f;
     color: #fff;
     text-shadow: 0px -1px 0px rgba(0,0,0,0.2);
     font-weight: normal;
@@ -164,16 +151,14 @@ footer a:link {
   color: #fff;
   text-decoration: none;
 }
- </style>
+    </style>
 </head>
-
 <body>
-<div class="">
-  <div id="calendari">
-  </div>
-  
-   <script>
-var mesos = [
+    <div class="">
+        <div id="calendari"></div>
+      </div>
+      <script>
+        var mesos = [
     'janvier',
     'février',
     'mars',
@@ -189,23 +174,23 @@ var mesos = [
 ];
 
 var dies = [
-    'L',
-    'M',
-    'M',
-    'J',
-    'V',
-    'S',
-    'D'
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wedensday',
+    'Thursday',
+    'Friday',
+    'Saturday'
 ];
 
 var dies_abr = [
-    'dg',
-    'dl',
-    'dm',
-    'dc',
-    'dj',
-    'dv',
-    'ds'
+    'Su',
+    'Mo',
+    'Tu',
+    'We',
+    'Th',
+    'Fr',
+    'Sa'
 ];
 
 Number.prototype.pad = function(num) {
@@ -344,12 +329,7 @@ function calendari(widget, data)
 
 calendari(document.getElementById('calendari'), new Date());
 
-
-
- </script>
-
+    </script>
 </body>
 </html>
-
-
 
